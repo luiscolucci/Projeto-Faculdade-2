@@ -1,2 +1,2 @@
 # Projeto-Faculdade-2
-Projeto - Equidade
+Projeto - Equidade de Genero
