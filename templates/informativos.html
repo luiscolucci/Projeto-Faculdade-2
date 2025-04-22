@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informativos - Mentoria Inclusiva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 60px; /* Espaço para a navbar */
+
+        }
+
+        body::before {
+            content: "";
+            position: fixed; /* Para cobrir toda a viewport e ficar fixo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('{{ url_for("static", filename="imagens/informativos.jpg") }}');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: auto; /* Ou 'auto', 'cover' */
+            opacity: 0.1; /* Ajuste a opacidade */
+            z-index: 1; /* Coloca a imagem de fundo atrás do conteúdo */
+            pointer-events: none; /* Permite que eventos de clique passem por este elemento */
+        }
+        .navbar {
+            background-color: #e3f2fd;
+        }
+        .info-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .info-section h2 {
+            color: #007bff;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente para o conteúdo */
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Mentoria Inclusiva</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('buscar_mentores') }}">Buscar Mentores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('informativos') }}">Informativos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Informativos sobre Equidade de Gênero</h1>
+
+        <div class="info-section">
+            <h2>O que é Discriminação de Gênero?</h2>
+            <p>A discriminação de gênero ocorre quando uma pessoa é tratada de forma desigual ou injusta com base no seu gênero. Isso pode se manifestar de diversas formas, como no ambiente de trabalho, na educação e em interações sociais.</p>
+            <p><a href="https://mundoeducacao.uol.com.br/sociologia/desigualdade-de-genero.htm">Saiba mais sobre os tipos e exemplos de discriminação</a></p>
+        </div>
+
+        <div class="info-section">
+            <h2>Impacto da Discriminação no Ambiente de Trabalho</h2>
+            <p>A discriminação de gênero pode ter sérias consequências para indivíduos e organizações, afetando a moral, a produtividade e a inovação. Mulheres e pessoas não binárias frequentemente enfrentam desafios como disparidade salarial, falta de oportunidades de ascensão e assédio.</p>
+            <p><a href="https://observatorio.sistemafiepe.org.br/desigualdade-de-genero-no-mercado-de-trabalho-impactos-e-desafios/#:~:text=Apesar%20de%20ser%20a%20maioria,Geografia%20e%20Estat%C3%ADstica%20(IBGE).">Entenda os efeitos da discriminação no mercado de trabalho</a></p>
+        </div>
+
+        <div class="info-section">
+            <h2>Recursos e Apoio</h2>
+            <p>Aqui você encontra links para organizações e recursos que oferecem apoio em casos de discriminação de gênero e promovem a igualdade.</p>
+            <ul>
+                <li><a href="https://sebrae.com.br/sites/PortalSebrae/empreendedorismofeminino" target="_blank">Rede de Apoio à Mulher</a></li>
+                <li><a href="https://www.linkedin.com/pulse/diferen%C3%A7a-entre-igualdade-e-equidade-de-g%C3%AAnero-renata-zampronio/" target="_blank">Diferença Entre Igualdade e Equidade</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm">Conheça a legislação sobre igualdade de gênero no Brasil</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
